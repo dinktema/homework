@@ -7,17 +7,18 @@
 from math import pi
 
 
-def perimeter(d):
-    return pi * d
+def perimeter(diameter):
+    return pi * diameter / 2
 
 
-def square(d):
-    r = d / 2
-    return pi * r ** 2
+
+def square(diameter):
+    return pi * ((diameter / 2) ** 2)
+
 
 
 if __name__ == "__main__":
-    d = int(input("Диаметр сковородки = "))
+    diameter = int(input("Диаметр сковородки = "))
 
-    print(perimeter(d))
-    print(square(d))
+    print(perimeter(diameter))
+    print(square(diameter))
