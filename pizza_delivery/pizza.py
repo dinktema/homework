@@ -12,28 +12,36 @@
 # или целочисленное деление //.
 
 
-def find_entrance(f, n):
-    """
-    f - число этажей в доме
-    n - номер квартиры
-    """
+def find_entrance(floors, flat_num):
+    count_flats_in_entrance = floors * 4
+    entrance = flat_num / count_flats_in_entrance
+    if entrance != 1:
+        entrance = (flat_num // count_flats_in_entrance) + 1
+    return entrance
 
-    return 0
 
+def find_floor(floors, flat_num):
+    count_flats_in_entrance = floors * 4
+    floor = flat_num % floors
+    if not floor:
+        floor = floors
+    elif floor != 1:
+        floor = (flat_num % floors) + 1
+    elif flat_num < floors:
+        floor = 1
 
-def find_floor(f, n):
-    """
-    f - число этажей в доме
-    n - номер квартиры
-    """
+    return floor
 
-    return 0
 
 
 if __name__ == "__main__":
     floors = int(input("Число этажей: "))
+    if not floors or floors < 0:
+        raise Exception("invalid input data")
     flat_num = int(input("Номер квартиры: "))
+    if not flat_num or flat_num < 0:
+        raise Exception("invalid input data")
 
     entrance = find_entrance(floors, flat_num)
     floor = find_floor(floors, flat_num)
-    print(entrance, floor)
+    print("entrance = " + str(entrance), "floor = " + str(floor))
