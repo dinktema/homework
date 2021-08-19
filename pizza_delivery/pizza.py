@@ -20,14 +20,17 @@ def find_entrance(floors, flat_num):
     return entrance
 
 
-def find_floor(floors, flat_num):
-    count_flats_in_entrance = floors * 4
-    floor = flat_num % floors
+def find_floor(floors, flat_num, entrance, count_flats_in_entrance):
+    floor = (flat_num // 4) // entrance
     if not floor:
-        floor = floors
-    elif floor != 1:
-        floor = (flat_num % floors) + 1
-    elif flat_num < floors:
+        if flat_num < floors:
+            floor = 1
+        else: floor = floors
+    elif floor >= 1:
+        if flat_num < count_flats_in_entrance:
+            floor = ((flat_num // 4) + 1
+        else: floor = 1 + ((flat_num // 4) - (floors * entrance))
+    elif flat_num <= 4:
         floor = 1
 
     return floor
@@ -43,5 +46,5 @@ if __name__ == "__main__":
         raise Exception("invalid input data")
 
     entrance = find_entrance(floors, flat_num)
-    floor = find_floor(floors, flat_num)
+    floor = find_floor(floors, flat_num, entrance)
     print("entrance = " + str(entrance), "floor = " + str(floor))
