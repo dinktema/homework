@@ -26,8 +26,13 @@ def is_leap_year(year: int) -> bool:
     else:
         return False
 
+def sec_method_is_leap_year(year: int) -> bool:
+   return (year % 4 == 0) and (year % 100 != 0) or (year % 400 == 0)
+
+
 if __name__ == "__main__":
     year = int(input("Введите год: "))
     if year <= 0:
         raise Exception("invalid inout data")
     print(is_leap_year(year))
+    print(sec_method_is_leap_year(year))
