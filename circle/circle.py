@@ -6,13 +6,14 @@
 
 from math import pi
 
+
 def check(diameter):
     if diameter < 0:
         raise Exception("invalid diameter")
 
 def perimeter(diameter):
     check(diameter)
-    return pi * diameter / 2
+    return 2 * pi * (diameter / 2)
 
 
 
@@ -25,6 +26,6 @@ def square(diameter):
 if __name__ == "__main__":
     diameter = int(input("Диаметр сковородки = "))
 
-    print(perimeter(diameter))
-    print(square(diameter))
+    print("длина блина: " + str(perimeter(diameter)))
+    print("площадь блина: " + str(square(diameter)))
 

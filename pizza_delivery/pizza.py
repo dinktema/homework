@@ -17,7 +17,7 @@ def count_flats_in_entrance(floors, flats_on_floor):
 
 def find_entrance(flat_num, count_flats):
     entrance = flat_num // count_flats
-    if entrance % 2 != 0 and entrance % 2 != 1:
+    if flat_num % count_flats != 0:
         entrance = (flat_num // count_flats) + 1
     return int(entrance)
 
