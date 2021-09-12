@@ -1,5 +1,37 @@
 # Homework
 
+## Задания
+
+### 1. Числа и арифметические выражения
+
+- circle
+- pizza_delivery
+
+### 2. Логические выражения, `bool`, `if`/`elif`/`else`
+
+- coins
+- leap_year
+- lessons
+
+### 3. Строки
+
+- str_remove_fragment
+- password_checker
+- chess_fen
+- atbash_cipher
+
+### 4. Iterable
+
+- hamming_distance
+- polygon
+- bible
+
+### 5. Loops
+
+- fibonacci
+- numeric_palindrom
+- fizzbuzz
+
 ## Краткая инструкция
 
 1. Установите git и `pytest`
@@ -10,7 +42,7 @@
 
 2. Сделайте fork данного репозитория (т.е. https://github.com/intyamo/homework)
 
-    Через кнопку `fork` и `git clone`:
+   Через кнопку `fork` и `git clone`:
 
     ```sh
     git clone https://github.com/<github_username>/homework.git
@@ -18,7 +50,7 @@
     git clone git@github.com:<github_username>/homework.git
     ```
 
-    Или через [GitHub CLI](https://github.com/cli/cli#installation):
+   Или через [GitHub CLI](https://github.com/cli/cli#installation):
 
     ```
     gh repo fork intyamo/homework
@@ -34,7 +66,7 @@
 
 4. Решите задание
 
-    Каждое задание находится в отдельной папке:
+   Каждое задание находится в отдельной папке:
 
     ```sh
     circle
@@ -55,7 +87,7 @@
 
 6. Commit, push
 
-    Рекомендуется перед коммитом отформатировать код
+   Рекомендуется перед коммитом отформатировать код
 
     - через PyCharm (`Code -> Reformat code`)
     - или [`black`](https://github.com/psf/black)
