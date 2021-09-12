@@ -13,4 +13,15 @@ import string
 
 
 def is_strong_password(pwd: str) -> bool:
-    pass
+    dig = False
+    punc = False
+    if len(pwd) >= 10 and not pwd.islower() and not pwd.isupper():
+        for i in pwd:
+            if i in string.digits:
+                dig = True
+            elif i in string.punctuation:
+                punc = True
+    if dig and punc:
+         return True
+    return False
+
