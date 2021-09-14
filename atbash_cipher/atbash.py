@@ -28,7 +28,11 @@ def atbash_encode(text: str) -> str:
                 letind = string.ascii_lowercase.index(letter) + 1  #-> int
                 newletter = list(string.ascii_lowercase)[len(string.ascii_lowercase) - letind] #-> str
                 cipher += newletter
-        cipher += ' '
+             if letter.isnumeric():
+                newletter = letter
+                cipher += newletter
+    cipher = [cipher[i:i+5] for i in range(0, len(cipher), 5)]
+    cipher = ' '.join(cipher)
     return cipher
 
 
@@ -38,13 +42,15 @@ def atbash_decode(cipher: str) -> str:
     for word in cipher:
         for letter in word:
             if letter in string.ascii_lowercase:
-                letind = string.ascii_lowercase.index(letter) +1  # -> int shifer
+                letind = string.ascii_lowercase.index(letter) +1  # -> int
                 newletter = list(string.ascii_lowercase)[len(string.ascii_lowercase) - letind]  # -> str
                 text += newletter
-        text += ' '
+            if letter.isnumeric():
+                newletter = letter
+                text += newletter
     return text
 
-cipfer = 'dzi rh kvzxv uivvwln rh hozevib rtmlizmxv rh hgivmtgs '
+cipfer = 'kozgu lin9¾'
 text = 'War is Peace,\t Freedom is Slavery,\n Ignorance is Strength.'
 print(atbash_encode(text))
 print(atbash_decode(cipfer))
