@@ -31,6 +31,14 @@
 - fibonacci
 - numeric_palindrom
 - fizzbuzz
+- golden_ratio
+
+### 6. Functions
+
+- rectangles
+- get_ranges
+- chess_moves
+- decorators
 
 ## Краткая инструкция
 
